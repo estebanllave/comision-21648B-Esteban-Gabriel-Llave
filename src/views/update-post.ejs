@@ -1,0 +1,55 @@
+<%- include('partials/header') -%>
+    <div class="form">
+        <form class="form-update" action="/post/update" method="post">
+            <!-- class="album py-5 bg-body-tertiary" -->
+            <div>
+                <!-- class=" container" -->
+                <div>
+                    <h3 class="form">Update Post</h3>
+                    <!-- class="row-cols-md-3 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" -->
+                    <div>
+                        <div class="mb-3">
+
+                            <!-- para poder hacer el update necesito mandar el id "pero no tiene que verse (hidden)" en el form -->
+                            <input type="text" name="id" value="<%= post.id%>" hidden>
+
+
+
+                            <label for="exampleFormControlInput1" class="form-label">Author</label>
+                            <!--name tiene que tener el misno nombre que la base de datos -->
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="author"
+                                value="<%= post.author%>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="title"
+                                value="<%= post.title%>" required>
+                        </div>
+                        <div class=" mb-3">
+                            <label for="exampleFormControlTextarea2" class="form-label">Post</label>
+                            <textarea class="textArea form-control" id="exampleFormControlTextarea1" rows="3"
+                                name="content" required><%= post.content%></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Image</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="image"
+                                placeholder="link" value="<%=post.image%>" required>
+                        </div>
+
+                        <div class="form">
+                        <button type="button" class="btn btn-outline-warning"><a href="/post/details/<%= post.id%>"
+                                class="nav-link active" aria-current="page">CANCEL</a></button>
+                        <button type="submit" class="btn btn-outline-secondary">UPDATE</button>
+                        <button type="button" class="btn btn-outline-danger"><a href="/post/delete/<%= post.id%>" class="nav-link active"
+                                aria-current="page">DELETE</a></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <br><br>
+
+    <%- include('partials/footer') -%>

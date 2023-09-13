@@ -1,0 +1,37 @@
+<%- include('partials/header') -%>
+<div class="form">
+    <!-- mando a donde manda el formulario y uso metodo post -->
+    <form class="form-update" action="/post" method="post">
+        <div class="album py-5 ">
+            <div >
+                <h3 class="form">Create new Post</h3>
+                <div >
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Author</label>
+                        <!--name tiene que tener el misno nombre que la base de datos -->
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Post</label>
+                        <textarea class="textArea form-control" id="exampleFormControlTextarea1" rows="3" name="content" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Image</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="image" placeholder="link">
+                    </div>
+                    <button type="submit" class="btn btn-success">Create</button>
+                    
+                    <button type="reset" class="btn btn-outline-dark"><a href="/post" class="nav-link active" aria-current="page">CANCEL</a></button>
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+    <%- include('partials/footer') -%>
